@@ -1,4 +1,4 @@
-// import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 export const About = () => {
   return (
@@ -17,7 +17,7 @@ export const About = () => {
         dolorum illum voluptatum dolores! Quas perferendis quis alias excepturi
         eaque voluptatibus eveniet error, nulla rem iusto?
       </p>
-      {/* <ul>
+      <ul>
         <li>
           <Link to="mission">Read about our mission</Link>
         </li>
@@ -28,7 +28,7 @@ export const About = () => {
           <Link to="reviews">Go through the reviews</Link>
         </li>
       </ul>
-      <Outlet /> */}
+      <Outlet />
     </main>
   );
 };
