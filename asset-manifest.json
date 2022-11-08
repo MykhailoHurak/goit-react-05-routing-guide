@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/goit-react-05-routing-guide/static/css/main.7c4f8962.css",
-    "main.js": "/goit-react-05-routing-guide/static/js/main.2054a979.js",
+    "main.js": "/goit-react-05-routing-guide/static/js/main.9621002f.js",
     "index.html": "/goit-react-05-routing-guide/index.html",
     "main.7c4f8962.css.map": "/goit-react-05-routing-guide/static/css/main.7c4f8962.css.map",
-    "main.2054a979.js.map": "/goit-react-05-routing-guide/static/js/main.2054a979.js.map"
+    "main.9621002f.js.map": "/goit-react-05-routing-guide/static/js/main.9621002f.js.map"
   },
   "entrypoints": [
     "static/css/main.7c4f8962.css",
-    "static/js/main.2054a979.js"
+    "static/js/main.9621002f.js"
   ]
 }
