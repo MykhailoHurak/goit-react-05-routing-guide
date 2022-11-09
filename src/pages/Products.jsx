@@ -1,24 +1,54 @@
-// export const Products = () => {
-//     return (
-//         <div>
-//             <h1>Products</h1>
-//             <p>
-//                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fugiat quidem! Quos animi cumque sit similique ipsam officiis quibusdam cum ullam a neque voluptas magnam ea quidem dignissimos inventore sunt dolorem excepturi voluptate repudiandae deserunt perspiciatis, sed voluptatum aspernatur temporibus! Nisi itaque qui saepe, tempora soluta laborum rerum odit error.
-//             </p>
-//         </div>
-//   );
-// };
-
-
-
 import { ProductsList } from "../components/ProductsList/ProductsList";
 import { getProducts } from "../API";
 
+import { useSearchParams } from "react-router-dom";
+import { SearchBox } from "../components/SearchBox/SearchBox";
+
 export const Products = () => {
   const products = getProducts();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const productName = searchParams.get("name") ?? "";
+
+  const visibleProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(productName.toLowerCase())
+  );
+
+  const updateQueryString = (name) => {
+    const nextParams = name !== "" ? { name } : {};
+    setSearchParams(nextParams);
+  };
   return (
     <main>
-      <ProductsList products={products} />
+      <SearchBox value={productName} onChange={updateQueryString} />
+      <ProductsList products={visibleProducts} />
     </main>
   );
 };
+
+// import { useSearchParams } from "react-router-dom";
+// import { ProductList } from "../components/ProductList";
+// import { SearchBox } from "../components/SearchBox";
+// import { getProducts } from "../fakeAPI";
+
+// export const Products = () => {
+//   const products = getProducts();
+//   const [searchParams, setSearchParams] = useSearchParams();
+//   const productName = searchParams.get("name") ?? "";
+
+//   const visibleProducts = products.filter((product) =>
+//     product.name.toLowerCase().includes(productName.toLowerCase())
+//   );
+
+//   const updateQueryString = (name) => {
+//     const nextParams = name !== "" ? { name } : {};
+//     setSearchParams(nextParams);
+//   };
+
+//   return (
+//     <main>
+//       <SearchBox value={productName} onChange={updateQueryString} />
+//       <ProductList products={visibleProducts} />
+//     </main>
+//   );
+// };
